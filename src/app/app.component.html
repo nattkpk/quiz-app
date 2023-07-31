@@ -1,11 +1,40 @@
+
+
 <div class="main vertical-center">
-<div class="container">
-  <h2 style="color: aliceblue;"> Question 1 of 10 </h2>
-  <h3 style="color: aliceblue;" class="mb-4 mt-2 "> {{question.text}} </h3>
-  <div class="row g-2">
-    <div *ngFor ="let choice of question.choices" class="col-xs-12 col-md-6 ">
-      <button (click)="onClickChoice(choice)" class="btn btn-outline-warning" style="width: 100%;">{{choice}}</button>
-    </div>
+
+
+  <div class="bar">
+    <img src="../assets/images/angularlogo.png" style="width: 50px;">
+    <a>QuizApp by KumMee</a>
   </div>
-</div>
+
+
+  <ng-container *ngIf="!isEnd; else showScore">
+    <div class="container" style="max-width: 800px">
+      <h2>Question {{ currentQuestionIndex + 1 }} of {{ questions.length }}</h2>
+      <h3 class="mb-3 mt-2">{{ questions[currentQuestionIndex].text }}</h3>
+      <img class="img" *ngIf="questions[currentQuestionIndex].image" [src]="questions[currentQuestionIndex].image" />
+      <div class="row g-2 mt-3">
+        <div *ngFor="let choice of questions[currentQuestionIndex].choices" class="col-xs-12 col-md-6 mt-2">
+          <button (click)="onClickChoice(choice)" class="btn btn-outline-warning" style="width: 100%">
+            {{ choice.text }}
+          </button>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+  
+
+  <ng-template #showScore>
+    <div class="container score" style="max-width: 800px">
+      <div class="row">
+        <div class="col-12 text-center h2 mb-3 white-text">
+          Your score: {{ score }}
+        </div>
+        <div class="col-12 text-center h2">
+          <button (click)="onClickNewQuiz()" class="btn btn-outline-danger" style="width: 100%">Start New Quiz</button>
+        </div>
+      </div>
+    </div>
+  </ng-template>
 </div>

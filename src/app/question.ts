@@ -2,7 +2,7 @@ export interface Question {
     id: number,
     text: string,
     image?: string,
-    choice: Choice[],
+    choices: Choice[],
 }
 export interface Choice {
     id: number,

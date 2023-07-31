@@ -22,3 +22,43 @@
     display: flex;
     align-items: center;
 }
+h2{
+    color: #fff;
+}
+h3{
+    color: #fff;
+}
+.img {
+    height: 200px;
+    display: block;
+    margin: 0 auto;
+    box-shadow: 5px 5px 15px rgba(250, 165, 18, 0.7);
+}
+.score{
+    background-color: rgba(255, 255, 255, 0.4);
+    padding: 30px;
+    border-radius: 10px;
+}
+/* app.component.css */
+.white-text {
+    color: white;
+  }
+
+  .bar {
+    margin-bottom: -5px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    background-color: #f0f0f0;
+    padding: 5px 0px 0px 30px;
+    width: 100%;
+    border: 1px solid #ccc;
+}
+.bar a {
+    text-decoration: none;
+    color: #000;
+    font-size: 30px;
+}
+
