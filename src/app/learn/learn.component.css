@@ -1,0 +1,55 @@
+.main {
+  height: 100vh;
+  width: 100vw;
+  border: 0px solid red;
+  background: url("../../assets/images/bg.gif") no-repeat center center fixed;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.vertical-center {
+  min-height: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+h2 {
+  color: #fff;
+}
+h4 {
+  color: #fff;
+}
+
+.score {
+  background-color: rgba(255, 255, 255, 0.4);
+  padding: 30px;
+  border-radius: 10px;
+}
+.white-text {
+  color: white;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  font: 16px sans-serif;
+}
+.anwser {
+  padding-left: 4vw;
+}
+
+.btnContainer{
+    display: flex;
+    justify-content: center;
+align-items: center;
+margin-bottom: -120px;
+}

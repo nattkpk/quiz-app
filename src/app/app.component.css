@@ -15,3 +15,16 @@
 .logo{
     padding-right: 10px;
 }
+
+#rocket {
+    position: fixed;
+    display: none;
+    width: 500px;
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%);
+    transition: top 1s ease-in-out;
+    z-index: 10;
+  }
+  
+  

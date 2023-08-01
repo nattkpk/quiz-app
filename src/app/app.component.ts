@@ -11,15 +11,14 @@ export class AppComponent {
     const rocket = document.getElementById('rocket');
     if (rocket) {
       rocket.style.display = 'block';
-      rocket.style.top = '100%'; 
+      rocket.style.top = '200%'; 
       setTimeout(() => {
-        rocket.style.top = '0';
+        rocket.style.top = '-80%';
       }, 10);
-      
+
       setTimeout(() => {
         rocket.style.display = 'none';
-        rocket.style.top = '100%';
-      }, 1500);
+      }, 1000);
     }
   }
 }

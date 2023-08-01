@@ -1,0 +1,49 @@
+<div class="main vertical-center">
+  <div class="btnContainer">
+    <div class="btn-group">
+      <button (click)="each()" class="btn btn btn-outline-warning">
+        Each Question
+      </button>
+      <button (click)="list()" class="btn btn btn-outline-warning">
+        Question List
+      </button>
+    </div>
+  </div>
+  <ng-container *ngIf="!isList; else showList">
+    <div class="container" style="max-width: 800px">
+      <h2>Question {{ currentQuestionIndex + 1 }} of {{ questions.length }}</h2>
+      <h4 class="mb-3 mt-4">Q : {{ questions[currentQuestionIndex].text }}</h4>
+      <h4 class="mb-2 mt-2">
+        A : {{ getCorrectAnswerText(questions[currentQuestionIndex].choices) }}
+      </h4>
+      <div class="row mt-3">
+        <div class="col-md-6 mb-2">
+          <button (click)="previous()" class="btn btn-outline-warning col-md-12">
+            Previous
+          </button>
+        </div>
+        <div class="col-md-6 mb-2">
+          <button (click)="next()" class="btn btn-outline-warning col-md-12">
+            Next
+          </button>
+        </div>
+      </div>
+           
+    </div>
+  </ng-container>
+
+  <ng-template #showList>
+    <div class="container score" style="max-width: 800px">
+      <ul>
+        <li *ngFor="let ques of questions">
+          <div class="row">
+            <div class="col-8 mb-3 white-text">{{ ques.text }}</div>
+            <div class="col-4 mb-3 white-text anwser">
+              👍 {{ getCorrectAnswerText(ques.choices) }}
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </ng-template>
+</div>
