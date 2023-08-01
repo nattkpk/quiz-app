@@ -47,9 +47,9 @@ li {
   padding-left: 4vw;
 }
 
-.btnContainer{
-    display: flex;
-    justify-content: center;
-align-items: center;
-margin-bottom: -120px;
+.btnContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: -120px;
 }

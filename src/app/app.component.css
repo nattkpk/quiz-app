@@ -1,16 +1,15 @@
 .barCSS {
     text-decoration: none;
-    color: #ffffff;
     margin-bottom: -8px;
     position: fixed;
     top: 0;
     left: 0;
     display: flex;
     align-items: center;
-    background-color: #f0f0f09b;
     padding: 5px 0px 5px 30px;
     width: 100%;
     border: 1px solid #ccc;
+    z-index: 5;
 }
 .logo{
     padding-right: 10px;
