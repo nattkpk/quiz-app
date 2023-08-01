@@ -20,7 +20,10 @@
   align-items: center;
 }
 h2 {
+  display: block;
   color: #fff;
+  width: 90px; /* Adjust the width as needed */
+  margin: 0 auto; /* This will horizontally center the element */
 }
 h4 {
   color: #fff;

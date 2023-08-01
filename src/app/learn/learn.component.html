@@ -1,17 +1,17 @@
 <div class="main vertical-center">
   <div class="btnContainer">
     <div class="btn-group" >
-      <button (click)="each()"  class="btn btn btn-outline-warning">
+        <button (click)="each()" class="btn" [ngClass]="{'btn-warning': !isList, 'btn-outline-warning': isList}">
         Each Question
       </button>
-      <button (click)="list()"  class="btn btn btn-outline-warning">
+      <button (click)="list()" class="btn" [ngClass]="{'btn-warning': isList, 'btn-outline-warning': !isList}">
         Question List
       </button>
     </div>
   </div>
   <ng-container *ngIf="!isList; else showList">
     <div class="container" style="max-width: 800px">
-      <h2>Question {{ currentQuestionIndex + 1 }} of {{ questions.length }}</h2>
+      <h2>{{ currentQuestionIndex + 1 }} of {{ questions.length }}</h2>
       <h4 class="mb-3 mt-4">Q : {{ questions[currentQuestionIndex].text }}</h4>
       <h4 class="mb-2 mt-2">
         A : {{ getCorrectAnswerText(questions[currentQuestionIndex].choices) }}
