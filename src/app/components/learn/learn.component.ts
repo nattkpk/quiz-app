@@ -1,51 +1,49 @@
-import { Component ,inject } from '@angular/core';
-import { Question } from '../question';
-import { QuizService } from '../quiz.service';
+import { Component, inject } from '@angular/core';
+import { Question } from '../../model/question';
+import { QuizService } from '../../service/quiz.service';
 @Component({
   selector: 'app-learn',
   templateUrl: './learn.component.html',
-  styleUrls: ['./learn.component.css']
+  styleUrls: ['./learn.component.css'],
 })
 export class LearnComponent {
   audiop = new Audio();
   audior = new Audio();
 
   quizService: QuizService = inject(QuizService);
-  questions : Question[];
+  questions: Question[] = [];
   currentQuestionIndex = 0;
   isList = false;
 
-
   constructor() {
-    this.questions = this.quizService. getQuizDataNoImage();
+    this.quizService.getQuizData().then((questions) => {
+      this.questions = questions;
+    });
     this.audiop.src = '../assets/audio/mixpop.wav';
-
   }
 
   next() {
     if (this.currentQuestionIndex < this.questions.length - 1) {
       this.playSound();
       this.currentQuestionIndex++;
-      
     }
   }
   previous() {
-    if (this.currentQuestionIndex > 0){
+    if (this.currentQuestionIndex > 0) {
       this.playSound();
       this.currentQuestionIndex--;
     }
   }
 
-  each(){
+  each() {
     this.playSound();
     this.isList = false;
   }
 
-  list(){
+  list() {
     this.playSound();
     this.isList = true;
   }
-
 
   private playSound() {
     this.audiop.load();
@@ -54,12 +52,8 @@ export class LearnComponent {
     });
   }
 
-
   getCorrectAnswerText(choices: any[]): string {
-    const correctChoice = choices.find(choice => choice.isAnswer === true);
+    const correctChoice = choices.find((choice) => choice.isAnswer === true);
     return correctChoice.text;
   }
-
-  
 }
-

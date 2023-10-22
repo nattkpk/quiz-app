@@ -1,11 +1,13 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AboutComponent } from './about/about.component';
-import { QuizComponent } from './quiz/quiz.component';
-import { LearnComponent } from './learn/learn.component';
+import { AboutComponent } from './components/about/about.component';
+import { QuizComponent } from './components/quiz/quiz.component';
+import { LearnComponent } from './components/learn/learn.component';
+import { EditComponent } from './components/edit/edit.component';
+import { LoginComponent } from './components/login/login.component';
 
   
 
@@ -14,10 +16,14 @@ import { LearnComponent } from './learn/learn.component';
     AppComponent,
     AboutComponent,
     QuizComponent,
-    LearnComponent
+    LearnComponent,
+    EditComponent,
+    LoginComponent,
   ],
+    
   imports: [
     BrowserModule,
+    FormsModule,
     AppRoutingModule
   ],
   providers: [],

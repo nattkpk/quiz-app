@@ -1,0 +1,25 @@
+<div class="main">
+  <div class="login">
+    <form>
+      <label>Login</label>
+      <p *ngIf='!loginError'>**For teachers only**</p>
+      <p *ngIf='loginError'>**Invalid username or password**</p>
+      <input
+        type="text"
+        name="username"
+        [(ngModel)]="username"
+        placeholder="Username"
+        required
+      />
+      <input
+        type="password"
+        name="Password"
+        [(ngModel)]="password"
+        placeholder="Password"
+        required
+      />
+      
+      <button (click)="onLogin()">Login</button>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,99 @@
+<div class="main vertical-center">
+  <div class="container score" style="max-width: 1200px">
+    <div class="scrollable-content">
+      <ul>
+        <li *ngFor="let ques of questions" class="question-item">
+          <div class="row">
+            <div class="h4 col-12 mb-2 white-text question-text">
+              {{ ques.text }}
+              <button
+                class="btn btn-outline-danger mx-2"
+                (click)="deleteQuestion(ques.id)"
+              >
+                Delete
+              </button>
+            </div>
+            <div
+              class="h6 col-3 answer-list white-text answer"
+              *ngFor="let choice of ques.choices"
+            >
+              {{ choice.text }}
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="container text-center">
+    <form #questionForm="ngForm" class="mx-auto">
+      <div class="col-12 mb-3">
+        <label class="h3">Enter Question :</label>
+        <input
+          type="text"
+          id="questionText"
+          [(ngModel)]="newText"
+          name="newText"
+          required
+          class="form-control"
+        />
+      </div>
+
+      <div class="row mx-auto mb-3">
+        <div class="col-6">
+          <input
+            type="text"
+            placeholder="Enter Correct Choice"
+            [(ngModel)]="trueChoice"
+            name="trueChoice"
+            required
+            class="form-control true-choice"
+          />
+        </div>
+
+        <div class="col-6">
+          <input
+            type="text"
+            placeholder="Enter False Choice"
+            [(ngModel)]="falseChoice1"
+            name="falseChoice1"
+            required
+            class="form-control false-choice"
+          />
+        </div>
+      </div>
+
+      <div class="row mx-auto mb-3">
+        <div class="col-6">
+          <input
+            type="text"
+            placeholder="Enter False Choice"
+            [(ngModel)]="falseChoice2"
+            name="falseChoice2"
+            class="form-control false-choice"
+          />
+        </div>
+
+        <div class="col-6">
+          <input
+            type="text"
+            placeholder="Enter False Choice"
+            [(ngModel)]="falseChoice3"
+            name="falseChoice3"
+            class="form-control false-choice"
+          />
+        </div>
+      </div>
+
+      <div class="col-12">
+        <button
+          class="btn btn-outline-warning"
+          (click)="addQuestion()"
+          [disabled]="!questionForm.valid"
+        >
+          Add New Question
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

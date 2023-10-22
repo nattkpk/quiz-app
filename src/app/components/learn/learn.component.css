@@ -2,7 +2,7 @@
   height: 100vh;
   width: 100vw;
   border: 0px solid red;
-  background: url("../../assets/images/bg.gif") no-repeat center center fixed;
+  background: url("../../../assets/images/bg.gif") no-repeat center center fixed;
   background-size: cover;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -22,7 +22,7 @@
 h2 {
   display: block;
   color: #fff;
-  width: 90px; /* Adjust the width as needed */
+  width: 100px; /* Adjust the width as needed */
   margin: 0 auto; /* This will horizontally center the element */
 }
 h4 {
